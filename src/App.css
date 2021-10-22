@@ -1,38 +1,187 @@
-.App {
+/* || GENERAL STYLES */
+
+* {
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
+}
+
+body {
+  background-color: #05c46b;
+  margin: 0;
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+button {
+  border-style: none;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  background: none;
+  transition: opacity 0.3s;
+}
+button:hover {
+  opacity: 0.6;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#pomodoro-timer {
+  border-radius: 10px;
+  width: 390px;
+  background-color: #1e272e;
+  padding: 20px;
+  border-radius: 250px 250px 10px 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* || DURATION SETTINGS */
+
+#settings {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  color: white;
+  margin-bottom: 20px;
+}
+
+#break-label,
+#session-label {
+  margin: 0;
+  margin-bottom: 10px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#break-length,
+#session-length {
+  margin: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.break-settings,
+.session-settings {
+  width: calc((100% / 2) - 10px);
+  border-radius: 10px;
+  background-color: #485460;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.dec-inc-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#settings button {
+  font-size: 30px;
+  line-height: 30px;
+  height: 30px;
+  width: 30px;
+  color: white;
+}
+
+/* || TIMER */
+
+#timer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  font-size: 82px;
+  color: white;
+  width: 350px;
+  height: 350px;
+  border-radius: 175px;
+  background-color: #05c46b;
+}
+
+#timer-label {
+  font-size: 28px;
+  text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+/* || CONTROLS */
+
+#controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#reset,
+#skip {
+  height: 60px;
+  width: 30%;
+  padding: 0;
+  background-color: #485460;
+  border-radius: 10px;
+}
+#reset-icon {
+  width: 24px;
+  height: 100%;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+#start_stop {
+  height: 60px;
+  width: 70%;
+  padding: 0;
+  border-radius: 10px;
+  background-color: tomato;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+#play-icon,
+#pause-icon {
+  width: 100%;
+  height: 26px;
+}
+
+#skip-icon {
+  width: 20px;
+  height: 100%;
+}
+
+/* || RESPONSIVE MOBILE */
+
+@media only screen and (max-width: 410px) {
+  body {
+    padding: 20px;
   }
-  to {
-    transform: rotate(360deg);
+
+  #pomodoro-timer {
+    width: 300px;
+  }
+
+  #timer {
+    width: 260px;
+    height: 260px;
+    font-size: 62px;
+  }
+
+  .break-settings,
+  .session-settings {
+    padding: 10px;
+  }
+
+  #start_stop {
+    width: 65%;
+  }
+
+  #reset {
+    width: 35%;
+  }
+
+  #timer-label {
+    font-size: 20px;
   }
 }
